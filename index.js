@@ -10,10 +10,12 @@ const x = setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
   const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-  timer.textContent = `${minutes}:${seconds}`
+  timer.textContent = `${lessThanTen(minutes)}:${lessThanTen(seconds)}`
 
   if (distance < 0) {
     clearInterval(x)
     timer.textContent = '00:00:00'
   }
 }, 1000)
+
+const lessThanTen = time => (time > 10 ? time : `0${time}`)
