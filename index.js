@@ -10,10 +10,10 @@ const x = setInterval(() => {
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   )
-  const minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60))
-  const seconds = Math.floor((distance % (1000 * 60 * 60 * 24)) / 1000)
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-  timer.textContent = `${hours}:${minutes}:${seconds}`
+  timer.textContent = `0${hours}:${minutes}:${seconds}`
 
   if (distance < 0) {
     clearInterval(x)
